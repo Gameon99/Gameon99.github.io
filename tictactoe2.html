@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="src/stylem.css">
+</head>
+<body>
+    <style>
+     .heading {
+      animation-name: heading;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes heading{
+      from {background-color:gold;}
+      to {background-color: deepskyblue;}
+    }
+     .sideboard {
+      margin-top: 30px;
+      margin-left: 40px;
+      width: 530px;
+      height: 590px;
+      background-color:deepskyblue;
+      animation-name: sideboard;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      box-shadow: 20px 20px 5px grey; 
+    }
+
+    @keyframes sideboard{
+      from {background-color:deepskyblue;}
+      to {background-color: gold;}
+    }
+    
+    .titleblock {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: relative;
+      animation-name: titleblock;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-direction:normal;
+      box-shadow: 20px 20px 5px grey;    
+    }
+
+    @keyframes titleblock {
+      0%   {background-color:deepskyblue; left:0px; top:0px;}
+      25%  {background-color:gold; left:510px; top:0px;}
+      50%  {background-color:deepskyblue; left:510px; top:570px;}
+      75%  {background-color:gold; left:0px; top:570px;}
+      100% {background-color:deepskyblue; left:0px; top:0px;}
+    }
+    </style>    
+    
+    <div class="sideboard">
+        
+      <div class="titleblock"></div>
+      <div class="heading"><h2>Tic-Tac-Toe</h2></div>
+      
+      <img style="margin-left:140px;" src="src/human1.png">
+      <img style="margin-top:-10px;"src="src/human2.png"><br>
+      
+      <div style="font-family: cursive;font-size: 16px;color:green;margin-left: 220px;"id="output">
+        TIME LEFT: <span id="label"></span>
+      </div>
+      
+      <!--The hint button gives a hint about the move that can be played next-->   
+      <button onClick="hint();"class="hint" style="top:20px; margin-left: 160px;font-family:sans-serif;"><span>Hint</span></button>
+        
+      <!--The undo button removes the move that was the most recent-->    
+      <button onClick="undo();"class="undo" style="margin-left:0px;font-family:sans-serif;"><span>Undo</span></button>
+      
+      <!--The following form actions enable to change the game mode to single player or two player at point in the game-->
+      <div style="margin-top:-40px;"class="btn-group">
+        <form action="index.html"><button >Single Player</button></form>
+        <form action="tictactoe2.html"><button style="background-color:black">Two Player</button></form>
+      </div><br>
+      
+      <!--The replay button restarts the game at any point in the game-->
+      <button onClick="startGame();"class="button" style="margin-left:215px;font-family:sans-serif;background-color:red"><span>Replay</span></button>
+      
+      <!--The following shows whose turn it is to play at point in the game-->
+       <div style="margin-top: -40px;">
+           <button onClick="Player1();"class="player1" style="margin-top:50px;font-family:sans-serif;">Player 1's turn</button>
+           <button onClick="Player2();"class="player2" style="margin-top:50px;font-family:sans-serif;">Player 2's turn</button>
+       </div>     
+    </div>
+    
+	<table>
+		<tr>
+			<td class="cell" id="0"></td>
+			<td class="cell" id="1"></td>
+			<td class="cell" id="2"></td>
+		</tr>
+		<tr>
+			<td class="cell" id="3"></td>
+			<td class="cell" id="4"></td>
+			<td class="cell" id="5"></td>
+		</tr>
+		<tr>
+			<td class="cell" id="6"></td>
+			<td class="cell" id="7"></td>
+			<td class="cell" id="8"></td>
+		</tr>
+	</table>
+    
+	<div class="endgame">
+		<div class="text"></div>
+	</div>
+	
+  <script src="script2.js"></script>
+</body>
+</html>

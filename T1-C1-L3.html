@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="sideboard">
+          <div class="titleblock"></div>
+          <div class="heading"><h2>Tic-Tac-Toe</h2></div>
+        
+          <img style="margin-left:140px;" src="src/human1.png">
+          <img style="margin-top:-20px;"src="src/robo.png"><br>
+        
+          <div style="font-family: cursive;font-size: 16px;color:green;margin-left: 220px;"id="output">
+            TIME LEFT: <span id="label"></span>
+          </div>
+          <h3 style="font-family: cursive;color: green;font-size: 18px;margin-left: 5px;">Starting Player</h3>
+          <div style="margin-top:-150px;margin-left: 200px;"class="btn-group">
+              
+            <form action="index.html"><button>Human</button></form>
+            <form action="T1-C1-L3.html"><button style="background-color:black">Computer</button></form>
+          </div>
+            
+          <!--The hint button gives a hint about the move that can be played next-->
+          <button onClick="hint();"class="hint" style=" margin-left: 165px;font-family:sans-serif;"><span>Hint</span></button>
+        
+          <!--The undo button removes the move that was the most recent-->
+          <button onClick="undo();"class="undo" style="margin-left:0px;font-family:sans-serif;"><span>Undo</span></button>
+        
+          <!--The replay button restarts the game at any point in the game-->
+          <button onClick="startGame();"class="button" style="font-family:sans-serif;background-color:red;"><span>Replay</span></button>
+        
+          <!--The following form actions enable to change the game mode to single player or two player at point in the game-->
+          <div style="margin-left: 165px;"class="btn-group">
+              
+            <form action="T1-C1-L3.html"><button style="margin-top:0px;background-color:black;">Single Player</button></form>
+            <form action="tictactoe2.html"><button style="margin-top:0px;margin-left: 10px;">Two Player</button></form>
+              
+          </div><br>
+          <h3 style="font-family: cursive;color: green;font-size: 18px;margin-left: 5px;">Difficulty level</h3> 
+          <div style="margin-left: 175px"class="btn-group">
+              
+            <form action="T1-C1-L1.html"><button style="margin-top:-50px;">Easy</button></form>
+            <form action="T1-C1-L2.html"><button style="margin-top:-50px;margin-left: 100px;">Medium</button></form>
+            <form action="T1-C1-L3.html"><button style="margin-top:-50px;margin-left: 225px;background-color:black;">Hard</button></form>  
+              
+          </div><br>
+    </div>
+    
+    <style>
+     .heading {
+      animation-name: heading;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes heading{
+      from {background-color:gold;}
+      to {background-color: deepskyblue;}
+    }
+     .sideboard {
+      margin-top: 30px;
+      margin-left: 40px;
+      width: 530px;
+      height: 590px;
+      background-color:deepskyblue;
+      animation-name: sideboard;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      box-shadow: 20px 20px 5px grey; 
+    }
+
+    @keyframes sideboard{
+      from {background-color:deepskyblue;}
+      to {background-color: gold;}
+    }
+    
+    .titleblock{
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: relative;
+      animation-name: titleblock;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-direction:normal;
+      box-shadow: 20px 20px 5px grey;    
+    }
+
+    @keyframes titleblock {
+      0%   {background-color:deepskyblue; left:0px; top:0px;}
+      25%  {background-color:gold; left:510px; top:0px;}
+      50%  {background-color:deepskyblue; left:510px; top:570px;}
+      75%  {background-color:gold; left:0px; top:570px;}
+      100% {background-color:deepskyblue; left:0px; top:0px;}
+    }
+    </style>    
+	<table>
+		<tr>
+			<td class="cell" id="0"></td>
+			<td class="cell" id="1"></td>
+			<td class="cell" id="2"></td>
+		</tr>
+		<tr>
+			<td class="cell" id="3"></td>
+			<td class="cell" id="4"></td>
+			<td class="cell" id="5"></td>
+		</tr>
+		<tr>
+			<td class="cell" id="6"></td>
+			<td class="cell" id="7"></td>
+			<td class="cell" id="8"></td>
+		</tr>
+	</table>
+    
+	<div class="endgame">
+		<div class="text"></div>
+	</div>
+	
+  <script src="S1-C1-L3.js"></script>
+</body>
+</html>
